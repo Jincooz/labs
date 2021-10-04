@@ -32,7 +32,7 @@ def chorde_method(range_start, range_end, coeficients):
         return secant__x
     
 
-with open('labsCM\console.txt', 'w') as file:
+with open('labsCM\Lab1\console.txt', 'w') as file:
     print("Рішення рівняння виду a5*х^5+a4*x^4+a3*x^3+a2*x^2+a1*x+a0")
     coeficients = input("Введіть коефіцієнти у форматі a5,a4,a3,a2,a1,a0 : ").split(',')
     for i in range(0,6):
@@ -46,5 +46,5 @@ with open('labsCM\console.txt', 'w') as file:
     chorde_method_iterations = 0
     chorde_method_result = chorde_method(range_start, range_end, coeficients)
 
-os.rename('labsCM\console.txt','labsCM\Result.txt')
+os.rename('labsCM\Lab1\console.txt','labsCM\Lab1\Result.txt')
 
