@@ -26,7 +26,7 @@ def bisection_method(range_start, range_end, coefficients, precision, file):
 def chorde_method(range_start, range_end, coefficients, precision, file):
     global chorde_method_iterations
     secant_x = (range_start*function(coefficients, range_end)-range_end*function(coefficients, range_start))/(function(coefficients, range_end)-function(coefficients, range_start))
-    if(abs(secant_x - range_start) > precision):
+    if(abs(secant_x - range_start) > precision):    
         chorde_method_iterations += 1
         print("Метод хорд " + str(chorde_method_iterations) + "-а ітерація c = " + str(secant_x))
         file.write("Метод хорд " + str(chorde_method_iterations) + "-а ітерація c = " + str(secant_x) + '\n')
@@ -39,19 +39,39 @@ def chorde_method(range_start, range_end, coefficients, precision, file):
 
 def newton_method(range_start, range_end, coefficients, precision, file):
     global newton_method_iterations
-    if ((function_derivative(coefficients,range_start) > 0 and function_derivative2(coefficients, range_start) > 0) or\
-        (function_derivative(coefficients,range_start) < 0 and function_derivative2(coefficients, range_start) < 0)):
-        x_prev = range_end
-    else:
+    if (function_derivative2(coefficients, range_start)*function(coefficients, range_start) > 0):
         x_prev = range_start
+    else:
+        x_prev = range_end
     x = x_prev - (function(coefficients,x_prev)/function_derivative(coefficients,x_prev))
     newton_method_iterations += 1
     print("Метод ньютона " + str(newton_method_iterations) + "-а ітерація x = " + str(x))
     file.write("Метод ньютона " + str(newton_method_iterations) + "-а ітерація x = " + str(x) + '\n')
     while(abs(x-x_prev) > precision and abs(function(coefficients,x)) > precision):
+    #while(abs(precision-x)<=abs(function(coefficients,x)/min(function_derivative(coefficients,range_start),function_derivative(coefficients,range_end)))):
         newton_method_iterations += 1
         x_prev = x
         x = x_prev - (function(coefficients,x_prev)/function_derivative(coefficients,x_prev))
         print("Метод ньютона " + str(newton_method_iterations) + "-а ітерація x = " + str(x))
         file.write("Метод ньютона " + str(newton_method_iterations) + "-а ітерація x = " + str(x) + '\n')
     return x
+
+def combinate_method(range_start, range_end, coefficients, precision, file):
+    global combinate_method_iterations
+    if (function_derivative2(coefficients, range_start)*function(coefficients,range_start) > 0):
+        x_prev = range_start
+    else:
+        x_prev = range_end
+    x = x_prev - (function(coefficients,x_prev)/function_derivative(coefficients,x_prev))
+    secant_x = (range_start*function(coefficients, range_end)-range_end*function(coefficients, range_start))/(function(coefficients, range_end)-function(coefficients, range_start))
+    combinate_method_iterations += 1    
+    print("Комбінований метод " + str(combinate_method_iterations) + "-а ітерація координата перетину оХ : січною = " + str(secant_x) + " дотичною = " + str(x))
+    file.write("Комбінований метод " + str(combinate_method_iterations) + "-а ітерація координата перетину оХ : січною = " + str(secant_x) + " дотичною = " + str(x) + '\n')
+    if(abs(x-secant_x)>precision):
+        if(function_derivative(coefficients,range_start)*function_derivative2(coefficients,range_start) > 0):
+            combinate_method(secant_x, x,coefficients,precision,file)
+        else:
+            combinate_method(x, secant_x,coefficients,precision,file)
+    else:
+        print('Корень рівняння ' + str((x+secant_x)/2))
+

@@ -21,6 +21,10 @@ with open('labsCM\Lab1\console.txt', 'w') as file:
     file.write('------------------------')
     mth.newton_method_iterations = 0
     mth.newton_method_result = mth.newton_method(range_start, range_end, coefficients, precision, file)
+    print('------------------------')
+    file.write('------------------------')
+    mth.combinate_method_iterations = 0
+    mth.combinate_method_result = mth.combinate_method(range_start, range_end, coefficients, precision, file)
 
 os.rename('labsCM\Lab1\console.txt','labsCM\Lab1\Result.txt')
 

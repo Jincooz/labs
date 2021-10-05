@@ -5,14 +5,14 @@ def insertion_sort(list):
         key = list[i]
         j = i - 1
         while j>=0:
-            if( key >= list[j]):
-                switch_amount += 1
-                break
-            else:
-                switch_amount += 1
             comparison_amount += 1
-            list[j+1]=list[j]
-            j -= 1
+            if( key >= list[j]):
+                break
+            else:               
+                switch_amount += 1
+                list[j+1]=list[j]
+                j -= 1
+                
         list[j+1] = key
         comparison_amount += 1
     return comparison_amount, switch_amount
@@ -81,7 +81,7 @@ def radix_sort(list):
         for j in reversed(range(0, len(list))):
             C[big_list[j][amount_of_digit_max -i-1]] -= 1
             big_list2[C[big_list[j][amount_of_digit_max -i-1]]] = big_list[j]
-            comparison_amount += 1
+            switch_amount += 1
         big_list = big_list2[:]
     for i in range(0,len(list)):
         list[i]=0
@@ -90,6 +90,7 @@ def radix_sort(list):
     return comparison_amount, switch_amount
 
 def print_for_size(size):
+    file = open('suck.txt', 'w')
     lists1 = [[0 for x in range(size)] for y in range(3)]
     lists1[0][0] = 0
     lists1[2][0] = random.randint(size,size*10)
@@ -98,8 +99,8 @@ def print_for_size(size):
         lists1[1][i] = random.randint(1,size*10000)
         lists1[2][i] = lists1[2][i-1] + random.randint(1,size*10)
     lists1[2] = lists1[2][::-1]
-    lists2 = lists1[:]
-    lists3 = lists1[:]
+    lists2 = [row[:] for row in lists1]
+    lists3 = [row[:] for row in lists2]
     comparison_amount, switch_amount = [[0 for x in range(3)] for y in range(3)] , [[0 for x in range(3)] for y in range(3)]
     comparison_amount[0][0], switch_amount[0][0] = heap_sort(lists1[0])
     comparison_amount[0][1], switch_amount[0][1] = insertion_sort(lists2[0])
@@ -110,14 +111,19 @@ def print_for_size(size):
     comparison_amount[2][0], switch_amount[2][0] = heap_sort(lists1[2]) 
     comparison_amount[2][1], switch_amount[2][1] = insertion_sort(lists2[2])
     comparison_amount[2][2], switch_amount[2][2] = radix_sort(lists3[2])
-    print("comparison_amount for " + str(size))
+    file.write("comparison_amount for " + str(size))
     for i in [0,1,2]:
         for j in [0,1,2]:
-            print(str(comparison_amount[i][j]), end=' ')
-        print()
+            file.write(str(comparison_amount[i][j]), end=' ')
+        file.write()
+    file.write("switch_amount for " + str(size))
+    for i in [0,1,2]:
+        for j in [0,1,2]:
+            file.write(str(switch_amount[i][j]), end=' ')
+        file.write()
     for i in range(0, size):
         if(lists1[2][i] != lists2[2][i] or lists1[2][i]!=lists3[2][i]):
-            print("Error")
+            file.write("Error")
 
 
 print_for_size(1000)
