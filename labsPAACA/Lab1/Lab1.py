@@ -112,18 +112,25 @@ def print_for_size(size):
     comparison_amount[2][1], switch_amount[2][1] = insertion_sort(lists2[2])
     comparison_amount[2][2], switch_amount[2][2] = radix_sort(lists3[2])
     file.write("comparison_amount for " + str(size))
+    print("comparison_amount for " + str(size))
     for i in [0,1,2]:
         for j in [0,1,2]:
-            file.write(str(comparison_amount[i][j]), end=' ')
-        file.write()
+            file.write(str(comparison_amount[i][j]) + ' ')
+            print(str(comparison_amount[i][j]), end=' ')
+        file.write('\n')
+        print()
     file.write("switch_amount for " + str(size))
+    print("switch_amount for " + str(size))
     for i in [0,1,2]:
         for j in [0,1,2]:
-            file.write(str(switch_amount[i][j]), end=' ')
-        file.write()
+            file.write(str(switch_amount[i][j]) + ' ')
+            print(str(switch_amount[i][j]), end=' ')
+        file.write('\n')
+        print()
     for i in range(0, size):
         if(lists1[2][i] != lists2[2][i] or lists1[2][i]!=lists3[2][i]):
             file.write("Error")
+    file.close()
 
 
 print_for_size(1000)
