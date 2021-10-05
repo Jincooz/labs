@@ -6,8 +6,7 @@ os.remove('labsCM\Lab1\Result.txt')
 with open('labsCM\Lab1\console.txt', 'w') as file:
     print("Рішення рівняння виду a5*х^5+a4*x^4+a3*x^3+a2*x^2+a1*x+a0")
     coefficients = input("Введіть коефіцієнти у форматі a5,a4,a3,a2,a1,a0 : ").split(',')
-    for i in range(0,6):
-        coefficients[i]=int(coefficients[i])
+    coefficients = [int(x) for x in coefficients]
     coefficients = coefficients[::-1]
     range = input("Введіть проміжок в форматі [a,b]: ")[1:-1].split(',')
     range_start, range_end = float(range[0]), float(range[1])
