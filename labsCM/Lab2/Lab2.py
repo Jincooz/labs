@@ -21,7 +21,7 @@ def U(matrix):
             sum = 0
             for k in range(0,i):
                 sum += U[k][i] * U[k][j]
-            U[i][j] = (matrix[i][j] - sum) / U[i][i]
+            U[i][j] = (complex(matrix[i][j],0) - sum) / U[i][i]
     return U
 
 def transpose(matrix):
@@ -44,6 +44,24 @@ def multiply(matrix1, matrix2):
                 ResultMatrix[i][j] += matrix1[i][l]*matrix2[l][j] 
     return ResultMatrix
 
+def solove1(Tmatrix, vector):
+    result_vector = [x for x in vector]
+    for i in range(Tmatrix.__len__()):
+        sum = 0
+        for j in range(i):
+            sum += result_vector[j] * Tmatrix[j][i]
+        result_vector[i] = (vector[i] - sum) / Tmatrix[i][i]
+    return result_vector
+
+def solove2(matrix, vector):
+    result_vector = [x for x in vector]
+    for i in range(matrix.__len__()):
+        sum = 0
+        for j in range(i+1,matrix.__len__()):
+            sum += result_vector[j] * matrix[j][i]
+        result_vector[i] = (vector[i] - sum) / matrix[i][i]
+    return result_vector
+
 
 def main():
     with open('labsCM\Lab2\Input.txt', 'r') as infile:
@@ -60,7 +78,8 @@ def main():
     print(Umatrix)
     TUmatrix = transpose(Umatrix)
     print(TUmatrix)
-    multipy_result = multiply(TUmatrix,Umatrix)
+    resultvector = solove2(Umatrix, solove1(TUmatrix, vector))
+    print(resultvector)
     pass
 
 os.remove('labsCM\Lab2\Console.txt')
