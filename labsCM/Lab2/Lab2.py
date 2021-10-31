@@ -155,24 +155,27 @@ def task_solution(matrix):
     resultvector, Umatrix, U_multiply_resultvector, residual_vector = sole_sulution(matrix, vector)
     dprint("U matrix : ")
     dprint(Umatrix)
-    dprint("U multiply SOLE solution vector :")
-    dprint(U_multiply_resultvector)
-    dprint("SOLE solution vector :")
-    dprint(resultvector)
-    dprint("Residual vector :")
-    dprint(residual_vector)
-    dprint("Determinant of matrix :")
-    dprint(determinant(Umatrix))
-    reverse_matrix = [[0 for x in row] for row in matrix]
-    for i in range(len(vector)):
-        vector = [(1 if i == j else 0) for j in range(len(vector))]
-        resultvector,trash,trash,trash = sole_sulution(matrix, vector)
-        for j in range(len(resultvector)):
-            reverse_matrix[j][i] = resultvector[j]
-    dprint("Reverse matrix :")
-    dprint(reverse_matrix)
-    dprint("Start matrix multiply reversematrix:")
-    dprint(MM_multiplication(reverse_matrix,matrix))
+    if (determinant(Umatrix) == 0):
+        dprint("Matrx is singular")
+    else:
+        dprint("U multiply SOLE solution vector :")
+        dprint(U_multiply_resultvector)
+        dprint("SOLE solution vector :")
+        dprint(resultvector)
+        dprint("Residual vector :")
+        dprint(residual_vector)
+        dprint("Determinant of matrix :")
+        dprint(determinant(Umatrix))
+        reverse_matrix = [[0 for x in row] for row in matrix]
+        for i in range(len(vector)):
+            vector = [(1 if i == j else 0) for j in range(len(vector))]
+            resultvector,trash,trash,trash = sole_sulution(matrix, vector)
+            for j in range(len(resultvector)):
+                reverse_matrix[j][i] = resultvector[j]
+        dprint("Reverse matrix :")
+        dprint(reverse_matrix)
+        dprint("Start matrix multiply reversematrix:")
+        dprint(MM_multiplication(reverse_matrix,matrix))
         
 
 def main():
