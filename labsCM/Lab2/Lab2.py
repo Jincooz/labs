@@ -89,10 +89,10 @@ def MV_multiplication(matrix, vector):
             result_vector[i] += matrix[i][j] * vector[j]
     return result_vector
 
-def vector_subtraction(matrix1, matrix2):
-    for i in range(len(matrix1)):
-            matrix1[i] -= matrix2[i]
-    return matrix1
+def vector_sum(vector1, vector2):
+    for i in range(len(vector1)):
+            vector1[i] += vector2[i]
+    return vector1
 
 def transpose(matrix):
     return [[matrix[j][i] for j in range(matrix.__len__())] for i in range(matrix.__len__())]
@@ -145,7 +145,7 @@ def sole_sulution(matrix, vector):
     Umatrix = U(matrix)    
     U_multiply_resultvector = straight_run(transpose(Umatrix), vector)    
     resultvector = reverse_run(Umatrix, U_multiply_resultvector)    
-    residual_vector = vector_subtraction(vector, MV_multiplication(matrix, resultvector))
+    residual_vector = vector_sum(vector, [-element for element in MV_multiplication(matrix, resultvector)])
     return resultvector, Umatrix, U_multiply_resultvector, residual_vector
     
 def task_solution(matrix):
