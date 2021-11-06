@@ -139,8 +139,8 @@ def task_solution(vector, k):
 
 def main():
     task_solution([1.0771,-1.0625],0)
-    
 
-os.remove('labsCM\Lab4\Console.txt')
 eps = 0.00001
 main()
+os.remove('labsCM\Lab4\ResultSimpleitteration.txt')
+os.rename('labsCM\Lab4\Console.txt','labsCM\Lab4\ResultSimpleitteration.txt')
