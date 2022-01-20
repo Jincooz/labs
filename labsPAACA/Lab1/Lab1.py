@@ -14,7 +14,7 @@ def insertion_sort(list):
                 j -= 1
                 
         list[j+1] = key
-        comparison_amount += 1
+        #comparison_amount += 1
     return comparison_amount, switch_amount
 
 def heap_sort(list):
@@ -111,22 +111,24 @@ def print_for_size(size):
     comparison_amount[2][0], switch_amount[2][0] = heap_sort(lists1[2]) 
     comparison_amount[2][1], switch_amount[2][1] = insertion_sort(lists2[2])
     comparison_amount[2][2], switch_amount[2][2] = radix_sort(lists3[2])
-    file.write("comparison_amount for " + str(size))
-    print("comparison_amount for " + str(size))
-    for i in [0,1,2]:
-        for j in [0,1,2]:
-            file.write(str(comparison_amount[i][j]) + ' ')
-            print(str(comparison_amount[i][j]), end=' ')
-        file.write('\n')
-        print()
-    file.write("switch_amount for " + str(size))
-    print("switch_amount for " + str(size))
-    for i in [0,1,2]:
-        for j in [0,1,2]:
-            file.write(str(switch_amount[i][j]) + ' ')
-            print(str(switch_amount[i][j]), end=' ')
-        file.write('\n')
-        print()
+    print("Купа sort comparison_amount for 1000:")
+    for i in range(3):
+        print(comparison_amount[i][0])
+    print("Вставка sort comparison_amount for 1000:")
+    for i in range(3):
+        print(comparison_amount[i][1])
+    print("Розряди sort comparison_amount for 1000:")
+    for i in range(3):
+        print(comparison_amount[i][2])
+    print("Купа sort switch_amount for 1000:")
+    for i in range(3):
+        print(switch_amount[i][0])
+    print("Вставка  sort switch_amount for 1000:")
+    for i in range(3):
+        print(switch_amount[i][1])
+    print("Розряди sort switch_amount for 1000:")
+    for i in range(3):
+        print(switch_amount[i][2])
     for i in range(0, size):
         if(lists1[2][i] != lists2[2][i] or lists1[2][i]!=lists3[2][i]):
             file.write("Error")

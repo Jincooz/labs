@@ -103,7 +103,7 @@ def main():
     vector1 = [round(element*10000) for element in vector1]
     vector2 = [round(element*10000) for element in vector2]
     experiment_steps = [-1.032 + 0.008*i for i in range(259)]
-    for y in experiment_steps:
+    for y in experiment_steps[::-1]:
         print = ""
         for x in experiment_steps:
             vector = task_solution([x , y])
