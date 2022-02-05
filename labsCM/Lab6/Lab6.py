@@ -1,8 +1,9 @@
 import math as mt
 import random as rng
 
+#TODO changee function to pow(7,5*x)
 def function(x):
-    return pow(7,5*x)
+    return x
 
 def create_basic_polynomial(x_list, i):
     def basic_polynomial(x):
@@ -40,7 +41,7 @@ def divided_difference(x_list, y_list):
 def create_newtons_polynomial(x_list, y_list):
     divided_differences = []
     for k in range(1,len(x_list)):
-        divided_differences.append(divided_difference(x_list[0:k+1],y_list))
+        divided_differences.append(divided_difference(x_list[0:k+1],y_list[0:k+1]))
 
     def newtons_polynomial(x):
         result = y_list[0]
@@ -55,8 +56,8 @@ def create_newtons_polynomial(x_list, y_list):
 def main():
     start = float(input("a = "))
     end = float(input("b = "))
-    amount_of_dots = 200
-    x_list = [ start + i * ((end - start)/(amount_of_dots-1)) for i in range(amount_of_dots)] 
+    amount_of_dots = 500
+    x_list = [ start + (i+1) * ((end - start)/(amount_of_dots)) for i in range(amount_of_dots)] 
     rng.shuffle(x_list)
     y_list = [function(x_list[i]) for i in range(amount_of_dots)] 
     polinomial1 = create_lagrange_polynomial(x_list, y_list)
@@ -76,5 +77,15 @@ def main():
         sumdy3 += dy3
         print("x = %f y1 = %s, y2 = %s, y3 = %s" % (x,("yes" if  dy1 < 0.000001 else "no"), ("yes" if dy2 < 0.000001 else "no"), ("yes" if dy3 < 0.000001 else "no")))
     print("dy1 = %.3f, dy2 = %.3f, dy3 = %.3f" % (sumdy1,sumdy2,sumdy3))
+    x_list2 = [ start + (i+1) * ((end - start)/(amount_of_dots*5)) for i in range(amount_of_dots*5)]
+    for x in x_list2:
+        dy1 = abs(polinomial1(x)-function(x))
+        dy2 = abs(polinomial2(x)-function(x))
+        dy3 = abs(polinomial3(x)-function(x))
+        sumdy1 += dy1/(amount_of_dots*5)
+        sumdy2 += dy2/(amount_of_dots*5)
+        sumdy3 += dy3/(amount_of_dots*5)
+        print("x = %f y1 = %s, y2 = %s, y3 = %s" % (x,("yes" if  dy1 < 0.000001 else "no"), ("yes" if dy2 < 0.000001 else "no"), ("yes" if dy3 < 0.000001 else "no")))
+    print("dy1 = %.3f, dy2 = %.3f, dy3 = %.3f" % (sumdy1,sumdy2,sumdy3))    
 
 main()
