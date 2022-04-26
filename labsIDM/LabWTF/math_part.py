@@ -24,7 +24,7 @@ def ARMA(AR, MA, coefficients, y_amount, v = None):
         row = np.reshape(X[i-max(AR, MA)],(X.shape[1],1)).T
         y[i] = row @ coefficients.T
     y = y
-    X = np.delete(X,axis = 1, obj = AR + 1)
+    #X = np.delete(X,axis = 1, obj = AR + 1)
     return y, X
 
 def less_square_method(X, Y, real_coefficients):

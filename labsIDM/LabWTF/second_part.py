@@ -52,7 +52,7 @@ def main():
             coefficients = take_coefficients(AR, MA)
             y, X = math_part.ARMA(AR,MA,coefficients, y_amount, v = v)
             Y = y[max(AR, MA):]
-            coefficients = np.delete(coefficients, axis = 1, obj = AR + 1)
+            #coefficients = np.delete(coefficients, axis = 1, obj = AR + 1)
             LSM, RLSM = results(), results()
             LSM.S, LSM.e = math_part.less_square_method(X, Y, coefficients)
             RLSM.S, RLSM.e = math_part.recursive_less_square_method(X, Y, coefficients)
