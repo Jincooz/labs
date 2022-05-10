@@ -7,7 +7,7 @@ namespace Lab5
     {
         internal static (double, double) Test(NeuralNetwork.NeuralNetwork neuralNetwork, double[,] testData)
         {
-            double mismatch = 0;
+            double TP = 0, FP = 0, FN = 0, TN =0, F = 0;
             double result = 0;
             TrainingData trainingData = new TrainingData(linalg.Matrix<double>.Build.DenseOfArray(testData), 7, 1);
             foreach (var data in trainingData.Data)
@@ -15,12 +15,29 @@ namespace Lab5
                 var diference = (normalize(neuralNetwork.ActivateNeuralNetwork(data[0].ToArray())) - data[1]);
                 if (diference[0] != 0)
                 {
-                    mismatch++;
+                    if(data[1][0] != 0)
+                    {
+                        FP++;
+                    }else
+                    {
+                        FN++;
+                    }
+                }else
+                {
+                    if (data[1][0] != 0)
+                    {
+                        TP++;
+                    }
+                    else
+                    {
+                        TN++;
+                    }
                 }
                 result += Pow(diference).Sum() / data[1].Count;
             }
-            mismatch /= trainingData.Data.Count;
-            return (result / trainingData.Data.Count, mismatch);
+            double P = (TP / (TP + FP)), R = (TP / (TP + FN));
+            F = 2d * P * R /(P + R);
+            return (result / trainingData.Data.Count, F);
 
         }
 
@@ -68,7 +85,7 @@ namespace Lab5
         {
             for (int i = 0; i < value.Count; i++)
             {
-                value[i] = value[i] > 0.7 ? 1 : value[i] < 0.3 ? 0 : value[i];
+                value[i] = value[i] > 0.5 ? 1 : value[i] < 0.5 ? 0 : value[i];
             }
             return value;
         }

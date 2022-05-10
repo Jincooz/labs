@@ -13,8 +13,8 @@ namespace Lab5
             neuralNetwork.SetDataAboutNetwork(real_best);
             (double, double) learningResult = Lab5.Lab5Things.Test(neuralNetwork, learningData),
                 testResult = Lab5.Lab5Things.Test(neuralNetwork, resultTestData);
-            Console.WriteLine($"Learning results:\nDispersion: {learningResult.Item1}\nMismatch: {learningResult.Item2 * 100}%\n" +
-                $"Test results:\nDispersion: {testResult.Item1}\nMismatch: {testResult.Item2 * 100}%");
+            Console.WriteLine($"Learning results:\nDispersion: {learningResult.Item1}\nF: {learningResult.Item2}\n" +
+                $"Test results:\nDispersion: {testResult.Item1}\nF: {testResult.Item2}");
         }
     }
 }
