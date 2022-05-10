@@ -1,0 +1,15 @@
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\bin\Debug\net6.0\TrainingDataGet.exe
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\bin\Debug\net6.0\TrainingDataGet.deps.json
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\bin\Debug\net6.0\TrainingDataGet.runtimeconfig.json
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\bin\Debug\net6.0\TrainingDataGet.dll
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\bin\Debug\net6.0\TrainingDataGet.pdb
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.csproj.AssemblyReference.cache
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.AssemblyInfoInputs.cache
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.AssemblyInfo.cs
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.csproj.CoreCompileInputs.cache
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.dll
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\refint\TrainingDataGet.dll
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.pdb
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\TrainingDataGet.genruntimeconfig.cache
+C:\Users\Jincooz\Documents\repos\labs\labsIDM\Lab5\TrainingDataGet\obj\Debug\net6.0\ref\TrainingDataGet.dll

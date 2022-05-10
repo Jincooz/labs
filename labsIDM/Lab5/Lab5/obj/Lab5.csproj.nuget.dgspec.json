@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9.csproj": {}
+    "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\Lab5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9.csproj": {
+    "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\Lab5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9.csproj",
-        "projectName": "Lab9",
-        "projectPath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9.csproj",
+        "projectUniqueName": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\Lab5.csproj",
+        "projectName": "Lab5",
+        "projectPath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\Lab5.csproj",
         "packagesPath": "C:\\Users\\Jincooz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\obj\\",
+        "outputPath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

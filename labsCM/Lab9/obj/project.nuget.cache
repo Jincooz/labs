@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jFrV1DVLowgTqm7BTLue8+zSNn3nNPgdXvpCJI2LBl0kwknDq1NT7WcDeFTdC5fIHnKU5ojlpx5BnLNfOTMkhw==",
+  "dgSpecHash": "rCNGL0ACSBkO1zvMEnFDr+e//54ry06x/jzkr1zhSP9u7rjfICjBx8rg8hXz7pmcO0hAAvguFkxAMA0oRcyuZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9\\Lab9.csproj",
+  "projectFilePath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsCM\\Lab9\\Lab9.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jincooz\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
   ],

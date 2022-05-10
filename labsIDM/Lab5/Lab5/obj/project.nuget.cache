@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tNVNMKSnzJ5EflznIXcugJTCMtVP5Y/F7RXWy34YpHAAdlVyHMFm6rkhj5Fgj2ndcqUbhw1i3FEUDbyOxyLUyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jincooz\\Documents\\repos\\labs\\labsIDM\\Lab5\\Lab5\\Lab5.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jincooz\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
