@@ -11,4 +11,10 @@
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="NeuralNetwork">
+      <HintPath>..\..\..\..\Libs\NeuralNetwork.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
