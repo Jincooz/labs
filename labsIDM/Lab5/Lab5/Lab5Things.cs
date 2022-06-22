@@ -5,9 +5,9 @@ namespace Lab5
 {
     internal class Lab5Things
     {
-        internal static (double, double) Test(NeuralNetwork.NeuralNetwork neuralNetwork, double[,] testData)
+        internal static (double, double, double) Test(NeuralNetwork.NeuralNetwork neuralNetwork, double[,] testData)
         {
-            double TP = 0, FP = 0, FN = 0, TN =0, F = 0;
+            double TP = 0, FP = 0, FN = 0, TN =0, F = 0, mismatch;
             double result = 0;
             TrainingData trainingData = new TrainingData(linalg.Matrix<double>.Build.DenseOfArray(testData), 7, 1);
             foreach (var data in trainingData.Data)
@@ -37,7 +37,8 @@ namespace Lab5
             }
             double P = (TP / (TP + FP)), R = (TP / (TP + FN));
             F = 2d * P * R /(P + R);
-            return (result / trainingData.Data.Count, F);
+            mismatch = (TP+TN)/(TP + FP + TN + FN);
+            return (result / trainingData.Data.Count, F, mismatch);
 
         }
 

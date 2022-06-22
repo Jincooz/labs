@@ -18,13 +18,13 @@ int main()
   Performance* myPerfomances = new Performance[numPerfomances];
   for (int i = 0; i < numPerfomances; i++) 
   {
-      cout << "Input name of perfomance: " << endl;
+      cout << "Input name of perfomance: ";
     cin >> perfomanceName;
     cout << "1 : Drama" << endl;
     cout << "2 : Operetta" << endl;
     cout << "3 : Opera" << endl;
     cout << "4 : Ballet" << endl;
-    cout << "Input genre of perfomance: " << endl;
+    cout << "Input genre of perfomance: ";
     while (true) {
         cin >> categoryMarker;
       switch (categoryMarker)
@@ -50,41 +50,41 @@ int main()
         goto p;
       }
       default:
-        cout << "You wrote wrong genre, try again: " << endl;
+        cout << "You wrote wrong genre, try again: ";
         cin >> categoryMarker;
         break;
       }
     }
 p:;
-    cout << "Input name of apartament where perfomance is played: " << endl;
+    cout << "Input name of apartament where perfomance is played: ";
     cin >> apartamentName;
-    cout << "Input adress of that apartament: " << endl;
+    cout << "Input adress of that apartament: ";
     cin >> apartamentAdress;
-    cout << "Input rent cost of apartament: " << endl;
+    cout << "Input rent cost of apartament: ";
     cin >> rentCost;
-    cout << "Input amount of seats of apartament: " << endl;
+    cout << "Input amount of seats of apartament: ";
     cin >> amountOfSeats;
-    cout << "Input orchestra salary: " << endl;
+    cout << "Input orchestra salary: ";
     cin >> orchestraSalary;
     apartament = Apartment(apartamentName, apartamentAdress, rentCost, amountOfSeats);
     apartament.orchesterPrice = orchestraSalary;
-    cout << "Input troupe's name: " << endl;
+    cout << "Input troupe's name: ";
     cin >> troupeName;
-    cout << "Input number of actors: " << endl;
+    cout << "Input number of actors: ";
     cin >> amountOfActors;
-    cout << "Input salary of actors: " << endl;
+    cout << "Input salary of actors: ";
     cin >> troupeSalary;
    troupe = Trupe(troupeName, amountOfActors, troupeSalary);
-    cout << "Input perfomance day: " << endl;
+    cout << "Input perfomance day: ";
     cin >> day;
-    cout << "Input perfomance month: " << endl;
+    cout << "Input perfomance month: ";
     cin >> month;
-    cout << "Input perfomance year: " << endl;
+    cout << "Input perfomance year: ";
     cin >> year;
     date = Date(day, month, year);
-    cout << "Input rent of perfomance: " << endl;
+    cout << "Input rent of perfomance: ";
     cin >> rent;
-    cout << "Input if orchestra needed to play there (0, 1) " << endl;
+    cout << "Input 1 if orchestra need ";
     while (true) {
         cin >> orchestra;
         switch (orchestra)
@@ -112,7 +112,7 @@ p2:;
     myPerfomances[i] = perfomance;
   }
   Repertoire rep;
-  Repertoire myRep = Repertoire("Grecee", myPerfomances);
+  Repertoire myRep = Repertoire("London", myPerfomances, numPerfomances);
   rep.ShowOnConsoleLong();
   myRep.ShowOnConsoleLong();
   Performance perf2;

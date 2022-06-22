@@ -13,7 +13,7 @@ public:
 	Performance* GetPerformances();
 	Repertoire& Add(Performance nperf);
 	Repertoire();
-	Repertoire(std::string nplace, Performance* nperfomences);
+	Repertoire(std::string nplace, Performance* nperfomences, int nperfomences_size);
 	Repertoire(const Repertoire& nrepertoire);
 	~Repertoire();
 	void ShowOnConsoleLong();

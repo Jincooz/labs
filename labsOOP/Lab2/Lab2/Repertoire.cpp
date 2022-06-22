@@ -43,14 +43,16 @@ Repertoire::Repertoire()
 	place = "Ukraine";
 }
 
-Repertoire::Repertoire(std::string nplace, Performance* nperfomences)
+Repertoire::Repertoire(std::string nplace, Performance* nperfomences, int nperfomences_size)
 {
+	size = nperfomences_size;
 	place = nplace;
 	perfomences = nperfomences;
 }
 
 Repertoire::Repertoire(const Repertoire& nrepertoire)
 {
+	size = nrepertoire.size;
 	place = nrepertoire.place;
 	perfomences = nrepertoire.perfomences;
 }

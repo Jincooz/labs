@@ -133,5 +133,5 @@ void Performance::ShowOnConsole()
 	trupe.ShowOnConsole();
 	perfomanceDate.ShowOnConsole();
 	std::cout << "Orend price: " << orendPrice
-		<< "\nOrchestr " << needOrchestr ? " need" : "no need";
+		<< "\nOrchestr " << (needOrchestr ? " need\n" : "no need\n");
 }

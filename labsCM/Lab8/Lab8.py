@@ -38,9 +38,10 @@ y2_list = RK4(df,y0,h,x0,x_end)
 y3_list = adams4(df,x_list[:4],y2_list[:4],h,x_end)
 e2 = [abs(y2_list[i]-y_list[i]) for i in range(amount)]
 e3 = [abs(y3_list[i]-y_list[i]) for i in range(amount)] 
-print(f"x_list\ty\ty_RK4\te_RK4\ty_adams\te_adams")
-for i in range(amount):
-    print(f"{round(x_list[i],4)}\t{round(y_list[i],4)}\t{round(y2_list[i],4)}\t{round(e2[i],5)}\t{round(y3_list[i],4)}\t{round(e3[i],5)}")
+with open("Result.txt", "w") as file:
+    file.write(f"x_list\ty\ty_RK4\te_RK4\ty_adams\te_adams\n")
+    for i in range(amount):
+        file.write(f"{round(x_list[i],4)}\t{round(y_list[i],4)}\t{round(y2_list[i],4)}\t{round(e2[i],5)}\t{round(y3_list[i],4)}\t{round(e3[i],5)}\n")
 plt.plot(x_list, y_list)
 plt.plot(x_list, y2_list)
 plt.plot(x_list, y3_list)

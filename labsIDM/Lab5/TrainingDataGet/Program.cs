@@ -15,7 +15,7 @@ while (cycle)
     Console.Clear();
     credit_base = random.NextDouble()*990000+10000;//10000-1000000
     salary = random.NextDouble()*2900000+100000;//100000-3000000
-    persent = random.NextDouble() * 2.9 + 0.1;// 0.1-2
+    persent = random.NextDouble() * 2.9 + 0.1;// 0.1-3
     conections = random.NextDouble()>0.5;// True False
     howmany_haveCredits = (random.NextDouble()>0.9)?0d:((random.NextDouble() > 0.7) ? 0.5 : ((random.NextDouble() > 0.5) ? 1d : ((random.NextDouble() > 0.3) ? 1.5 : 2d)));// 0 0.5 1 1.5 2
     country_factor = (random.NextDouble() > 0.9);// True False
@@ -53,6 +53,6 @@ while (cycle)
         + "\\" + (country_factor ? 1 : 0).ToString() 
         + "\\" + country_stability.ToString() 
         + "\\" + pledge.ToString()
-        + "|" + result[0].ToString();
+        + "\\" + result[0].ToString();
     await file.WriteLineAsync(resultstr);
 }

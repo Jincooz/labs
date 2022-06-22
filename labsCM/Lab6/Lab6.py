@@ -4,9 +4,8 @@ from tkinter import E
 import numpy as np
 from matplotlib import pyplot as plt
 
-#TODO changee function to pow(7,5*x)
 def function(x):
-    return pow(7,x)
+    return pow(7,5*x)
 
 def create_basic_polynomial(x_list, i):
     def basic_polynomial(x):

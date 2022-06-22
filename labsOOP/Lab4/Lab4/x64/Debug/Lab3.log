@@ -1,0 +1,13 @@
+﻿  Apartment.cpp
+  Date.cpp
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(55,3): warning C4293: <<: отрицательное или слишком большое смещение; поведение не определено
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(55,18): warning C4804: <<: небезопасное использование типа "bool" в операции
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(56,3): warning C4293: <<: отрицательное или слишком большое смещение; поведение не определено
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(56,19): warning C4804: <<: небезопасное использование типа "bool" в операции
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(56,53): warning C4804: <<: небезопасное использование типа "bool" в операции
+C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\Lab3\Date.cpp(56,86): warning C4804: <<: небезопасное использование типа "bool" в операции
+  Lab3.cpp
+  Performance.cpp
+  Repertoire.cpp
+  Создание кода...
+  Lab3.vcxproj -> C:\Users\Jincooz\Documents\repos\labs\labsOOP\Lab3\x64\Debug\Lab3.exe

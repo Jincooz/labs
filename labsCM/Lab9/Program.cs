@@ -49,10 +49,43 @@ namespace CM_9
             var y = C.Solve(d);
             for(int i = 0;i<n+1;i++)
             {
-                Console.WriteLine(Math.Round(x[i],5).ToString() + "\t" + Math.Round(y[i],5).ToString());
+                Console.WriteLine(Math.Round(x[i],3).ToString() + "\t" + Math.Round(y[i],3).ToString() + "\t" + Math.Round(Analytic(x[i]), 3).ToString());
             }
             return;
         }
+        static double Analytic(double x)
+        {
+            double s1 = (2.87494 * Math.Pow(10, -10) * Math.Pow(x,7) 
+                - 6.43987* Math.Pow(10, -8) * Math.Pow(x, 6) 
+                + 5.40949* Math.Pow(10, -6) * Math.Pow(x, 5) 
+                - 0.00021638 * Math.Pow(x, 4) 
+                + 0.00432759 * Math.Pow(x, 3)
+                - 0.0415449 * Math.Pow(x, 2) 
+                + 0.166179 * x - 0.189919);
+            double s2 = (-2.26499 * Math.Pow(10, -9) * Math.Pow(x, 7) 
+                + 5.07358 * Math.Pow(10, -7) * Math.Pow(x, 6) 
+                - 0.0000426181 * Math.Pow(x, 5)
+                + 0.00170472 * Math.Pow(x, 4)
+                - 0.0340945 * Math.Pow(x, 3)
+                + 0.327307 * Math.Pow(x, 2)
+                - 0.975894 * x + 1.11531);
+            double s3 = (-1.14998 * Math.Pow(10, -9) * Math.Pow(x, 7)
+                + 2.52995 * Math.Pow(10, -7) * Math.Pow(x, 6)
+                - 0.0000206444 * Math.Pow(x, 5)
+                + 0.000786768 * Math.Pow(x, 4)
+                - 0.0144489 * Math.Pow(x, 3)
+                + 0.117767 * Math.Pow(x, 2)
+                - 0.326254 * x + 0.0949597);
+            double expint = SpecialFunctions.ExponentialIntegral(x / 4, 7);
+            double r1 = x * s1 * expint;
+            double r2 = x * s2;
+            double r3 = Math.Exp(x / 4) * s3;
+            return r1
+                + r2
+                + r3; 
+        }
+
+
         static void Main(string[] args)
         {
             finite_diff(0.05d);
